@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3D cube</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory'); ?>/style.css">-->
+    <link rel="stylesheet" type="text/css" href="cube3D.css">
+</head>
+
+<body>
+  <div class="wraper">
+    <div class="cube">
+        <div class="top">
+          <div class="vl line-1"></div><h1>top</h1>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+        <div class="bottom">
+          <div class="vl line-1"></div>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+        <div class="left">
+          <div class="vl line-1"></div>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+        <div class="right">
+          <div class="vl line-1"></div>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+        <div class="front">
+          <div class="vl line-1"></div>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+        <div class="back">
+          <div class="vl line-1"></div>
+          <div class="vl line-2"></div>
+          <div class="vl line-3"></div>
+          <div class="vl line-4"></div>
+        </div>
+    </div>
+  </div>
+</body>
+<script>
+window.onload=function(){
+    img_box = document.querySelector('.cube');
+    var x = 0;
+    var y = 0;
+    function trans(){
+        x = x + 10;
+        y = y + 10;
+        img_box.style.transform='perspective(700px) rotateY('+x+'deg) rotateX('+y+'deg)';
+    }
+    setInterval(trans,80);//每隔0.5s调用trans函数
+}
+
+</script>
