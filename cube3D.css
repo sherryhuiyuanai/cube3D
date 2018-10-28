@@ -20,8 +20,8 @@ html {
     position: relative;
     /*子元素继承3D效果*/
     transform-style: preserve-3d;
-    /*加上下边这句可以体现出立体感*/
-    /*transform: rotateX(-30deg) rotateY(-45deg);*/
+    /* transform: perspective(100%) rotateY(60deg) rotateX(45deg); */
+    zoom: 150%;
 }
 .cube>div {
     width: 100%;
@@ -39,6 +39,8 @@ html {
     user-select: none;
 }
 
+/* 从俯视图的视角往下看 纵穿的是z轴 */
+/* 以一般的魔方视角来看(上黄下白前绿)，黄是z正轴，红是y正轴，蓝是x正轴 */
 .top{
     background-color: yellow;
     opacity: 0.8;
@@ -46,9 +48,9 @@ html {
 }
 
 .bottom{
-    background: white;
-    opacity: 0.8;
-    transform: rotateX(-90deg) translateZ(130px);
+    background: black;
+    opacity: 0.9;
+    transform: translateZ(-100px);
 }
 
 .left{
@@ -76,9 +78,12 @@ html {
     /*向后旋转，以确保盒子上的文字朝向盒子外*/
     transform: rotateY(180deg) translateZ(130px);
 }
+
+/* this is the line on the cube surface */
 .vl {
     border-left: 5px solid black;
 }
+
 .line-1 {
   margin-left: 33.3%;
 }
