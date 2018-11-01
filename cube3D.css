@@ -1,100 +1,785 @@
-body,
-html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    /*将border和padding绘制在设置宽高之内*/
-    box-sizing: border-box;
-    overflow: hidden;
+body{
+  background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
 }
-.wraper {
-    width: 260px;
-    height: 260px;
-    margin: 128px auto;
-    /*景深，可以理解为视角到3D物体的距离，设置于舞台元素上*/
-    perspective: 1000px;
-}
-.cube {
-    height: 100%;
-    width: 100%;
+.imgBox{
+    width: 200px;
+    height: 200px;
+    margin-top: 200px;
+    margin-left: 300px;
     position: relative;
-    /*子元素继承3D效果*/
     transform-style: preserve-3d;
     /* transform: perspective(100%) rotateY(60deg) rotateX(45deg); */
     zoom: 150%;
 }
-.cube>div {
-    width: 100%;
-    height: 100%;
+.imgBox div{
+    width: 200px;
+    height: 200px;
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: rgba(0, 0, 0, .8); */
-    text-align: center;
-    line-height: 260px;
-    color: #fff;
-    font-size: 48px;
-    border: 2px solid #fff;
-    /*设置文本内容不可选*/
-    user-select: none;
+    box-shadow: 10px 10px 150px none;
 }
+
 
 /* 从俯视图的视角往下看 纵穿的是z轴 */
 /* 以一般的魔方视角来看(上黄下白前绿)，黄是z正轴，红是y正轴，蓝是x正轴 */
-.top{
-    background-color: yellow;
-    opacity: 0.8;
-    transform: rotateX(90deg) translateZ(130px);
+
+/* This is for the 9 pieces position */
+#piece{
+      width:66.6px; height:66.6px;
+      border: 2.5px solid white;
 }
 
-.bottom{
+.piece1YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
+}
+.piece1WhitwBottom{
     background: black;
     opacity: 0.9;
-    transform: translateZ(-100px);
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
 }
-
-.left{
-    background: orange;
-    opacity: 0.8;
-    transform: rotateY(-90deg) translateZ(130px);
+.piece1WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
 }
-
-.right{
+.piece1RedRight{
      background: red;
-     opacity: 0.8;
-     transform: rotateY(90deg) translateZ(130px);
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
 }
-
-.front{
+.piece1OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
+}
+.piece1FrontGreen{
     background: green;
-    opacity: 0.8;
-    /*正面不用旋转，直接向前平移半个盒子宽*/
-    transform: translateZ(130px);
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
 }
-
-.back{
+.piece1BackBlue{
     background: rgb(6,131,202);
-    opacity: 0.8;
-    /*向后旋转，以确保盒子上的文字朝向盒子外*/
-    transform: rotateY(180deg) translateZ(130px);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+  width: 66.6px;
+  height: 66.6px;
+  margin-left: 0%;
+  margin-top: 0%;
+  overflow:hidden;
 }
+/* piece 2 --------------------------------------------*/
 
-/* this is the line on the cube surface */
-.vl {
-    border-left: 5px solid black;
+.piece2YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
 }
+.piece2WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece2WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece2RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 66.6px;
+       margin-top: 0%;
+       overflow:hidden;
+}
+.piece2OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece2FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece2BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+/* piece 3-------------------------------------------- */
 
-.line-1 {
-  margin-left: 33.3%;
+.piece3YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
 }
-.line-2 {
-  margin-left: 66.6%;
+.piece3WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
 }
-.line-3 {
-  margin-top: 33.3%;
-  transform: rotate(90deg);
+.piece3WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
 }
-.line-4 {
-  margin-top: 66.6%;
-  transform: rotate(90deg);
+.piece3RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 133.2px;
+       margin-top: 0%;
+       overflow:hidden;
+}
+.piece3OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece3FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+.piece3BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 0%;
+      overflow:hidden;
+}
+/* piece 4 -------------------------------------------*/
+
+.piece4YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece4WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece4WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece4RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 0%;
+       margin-top: 66.6px;
+       overflow:hidden;
+}
+.piece4OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece4FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece4BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+/* piece 5 ----------------------------------------------*/
+
+.piece5YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece5WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece5WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece5RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 66.6px;
+       margin-top: 66.6px;
+       overflow:hidden;
+}
+.piece5OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece5FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece5BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+/* piece 6 ------------------------------------------*/
+
+.piece6YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece6WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece6WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece6RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 133.2px;
+       margin-top: 66.6px;
+       overflow:hidden;
+}
+.piece6OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece6FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+.piece6BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 66.6px;
+      overflow:hidden;
+}
+/* piece 7 ----------------------------------------------*/
+
+.piece7YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece7WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece7WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece7RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 0%;
+       margin-top: 133.2px;
+       overflow:hidden;
+}
+.piece7OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece7FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece7BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 0%;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+/* piece 8 ----------------------------------------------*/
+
+.piece8YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece8WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece8WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece8RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 66.6px;
+       margin-top: 133.2px;
+       overflow:hidden;
+}
+.piece8OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece8FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece8BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 66.6px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+/* piece 9 ----------------------------------------------*/
+
+.piece9YellowTop{
+    background-color: yellow;
+    opacity: 0.9;
+    transform: translateZ(100px);
+    font-size: 40px;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece9WhitwBottom{
+    background: black;
+    opacity: 0.9;
+    transform: rotateY(180deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece9RedRight{
+     background: red;
+     opacity: 0.9;
+     transform: rotateX(90deg) translateZ(100px);
+     font-size: 40px;
+     color: white;
+       width: 66.6px;
+       height: 66.6px;
+       margin-left: 133.2px;
+       margin-top: 133.2px;
+       overflow:hidden;
+}
+.piece9OrangeLeft{
+    background: orange;
+    opacity: 0.9;
+    transform: rotateX(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece9FrontGreen{
+    background: green;
+    opacity: 0.9;
+    transform: rotateY(-90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 133.2px;
+      overflow:hidden;
+}
+.piece9BackBlue{
+    background: rgb(6,131,202);
+    opacity: 0.9;
+    transform:rotateY(90deg) translateZ(100px);
+    font-size: 40px;
+    color: white;
+      width: 66.6px;
+      height: 66.6px;
+      margin-left: 133.2px;
+      margin-top: 133.2px;
+      overflow:hidden;
 }
